@@ -1,5 +1,5 @@
 import React from 'react'
-import Home from './Home'
+import Home from '../home'
 import { Switch, Route } from 'react-router-dom'
 
 export const Main = () => (
