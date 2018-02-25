@@ -8,7 +8,7 @@ cache:
 install:
   - npm install
 before_script:
-  - cp config.sample.js config.js
+  - cp src/config.sample.js src/config.js
 script:
   - npm test
 notifications:
