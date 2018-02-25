@@ -1,6 +1,7 @@
 import React from 'react'
 import GoogleLogin from 'react-google-login'
 import postTokenToServer from '../lib/auth'
+import {CLIENT_ID} from '../config'
 
 class Home extends React.Component {
 
@@ -16,9 +17,9 @@ class Home extends React.Component {
 		return (
 				<div>
 					<p> Welcome to Oleville Voting! </p>
-					<p> Please log in to access your ballot.</p>
+					<p> Please log in to access your ballot. </p>
 					<GoogleLogin
-						clientId='437117106108-miaqebkeantfo00063nottgvsd419ns9.apps.googleusercontent.com'
+						clientId={CLIENT_ID}
 						buttonText='Login'
 						responseType='token'
 						hostedDomain='stolaf.edu'
@@ -31,4 +32,3 @@ class Home extends React.Component {
 }
 
 export default Home
-
