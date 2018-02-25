@@ -4,8 +4,8 @@ import Header from './header'
 
 const App = () => (
 	<div>
-		<Header />
-		<Main />
+	<Header />
+	<Main />
 	</div>
 )
 
