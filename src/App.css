@@ -4,19 +4,37 @@
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+  height: 80pt;
 }
 
 .App-header {
   background-color: #222;
-  height: 150px;
-  padding: 20px;
+  height: 150pt;
+  padding: 20pt;
   color: white;
 }
 
 .App-intro {
   font-size: large;
 }
+
+.login-gbutton {
+	display: inline-block;
+	background: rgb(209, 72, 54);
+	color: rgb(255, 255, 255);
+
+	padding-left: 10pt;
+	padding-right: 10pt;
+
+	padding-top: 10pt;
+	padding-bottom: 10pt;
+	border-radius: 2pt;
+	border: 1pt solid transparent;
+	font-size: 14pt;
+	font-weight: bold;
+	font-family: Roboto, sans-serif;
+}
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
