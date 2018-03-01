@@ -10,10 +10,21 @@
     "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.11"
   },
+  "prettier": {
+    "useTabs": true,
+    "singleQuote": true,
+    "bracketSpacing": true,
+    "semi": false
+  },
+  "devDependencies": {
+    "prettier": "^1.10.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prettier": "prettier --write 'src/**/*.js' '*.js'",
+    "prettier:ci": "prettier --list-different 'src/**/*.js' '*.js' || ( echo \"\nLooks like the above files aren't pretty.\nRun prettier, pretty please.\\n\"; exit 1 )"
   }
 }
