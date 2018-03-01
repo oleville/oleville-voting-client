@@ -14,7 +14,7 @@ export function clearToken() {
 
 export function tokenify(tok, headers = {}) {
 	return Object.assign(headers, {
-		'Authorization': 'Token ' + JSON.stringify(tok)
+		Authorization: 'Token ' + JSON.stringify(tok)
 	})
 }
 
@@ -25,6 +25,6 @@ export function hasToken() {
 export function postTokenToServer(tok) {
 	fetch(`${API_LOCATION}/login/google`, {
 		method: 'POST',
-		headers: tokenify(tok)}
-	)
+		headers: tokenify(tok)
+	})
 }

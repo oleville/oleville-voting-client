@@ -1,11 +1,10 @@
 import React from 'react'
-import {tokenify, getToken, hasToken} from '../lib/auth'
-import {API_LOCATION} from '../config'
+import { tokenify, getToken, hasToken } from '../lib/auth'
+import { API_LOCATION } from '../config'
 
 import '../App.css'
 
 class Ballot extends React.Component {
-
 	constructor(props) {
 		super(props)
 
@@ -13,7 +12,7 @@ class Ballot extends React.Component {
 	}
 
 	componentWillMount() {
-		if(!hasToken()) {
+		if (!hasToken()) {
 			alert('missing token, grumble grumble')
 			window.location = '/'
 		}
@@ -23,31 +22,29 @@ class Ballot extends React.Component {
 		})
 			.then(res => {
 				// TODO better logic
-				if(res.status < 400)
-					return res.json()
+				if (res.status < 400) return res.json()
 				else
 					// TODO better error message
-					throw new Error("Request error")
+					throw new Error('Request error')
 			})
 			.then(items => {
-				this.setState({entries: items})
+				this.setState({ entries: items })
 				window.items = items
 			})
-			.catch(() => window.location = '/')
+			.catch(() => (window.location = '/'))
 	}
 
 	render() {
 		return (
 			<div>
-			{
-				// TODO prettify this and turn it into a form
-				(this.state.entries) ?
+				{// TODO prettify this and turn it into a form
+				this.state.entries ? (
 					this.state.entries.map(entry => {
 						return <code key={entry['id']}>{JSON.stringify(entry)}</code>
 					})
-				:
+				) : (
 					<p> No entries</p>
-			}
+				)}
 			</div>
 		)
 	}
